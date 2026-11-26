@@ -1,0 +1,125 @@
+body {
+  background-color: #242424;
+  color: #e6e6e6;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+a {
+  color: #e6e6e5;
+}
+
+a:hover {
+  color: #c4c4c4;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1rem;
+  max-width: 72rem;
+  margin: 1.75rem 0;
+}
+
+.social-link {
+  --social-accent: #ff4d4d;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: 7rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--social-accent), transparent 78%);
+  border-radius: 1.15rem;
+  background:
+    radial-gradient(ellipse at 0% 50%, color-mix(in srgb, var(--social-accent), transparent 87%), transparent 58%),
+    linear-gradient(135deg, #34343b, #29292e);
+  color: #f5f5f5;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-decoration: none;
+  box-shadow: 0 0.7rem 1.8rem #0000002e;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.social-link--instagram {
+  --social-accent: #e86bb0;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--social-accent), transparent 35%);
+  color: #fff;
+  box-shadow: 0 1rem 2rem color-mix(in srgb, var(--social-accent), transparent 82%);
+}
+
+.social-link:focus-visible {
+  outline: 2px solid var(--social-accent);
+  outline-offset: 3px;
+}
+
+.social-link__icon {
+  display: grid;
+  flex: 0 0 3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border-radius: 0.95rem;
+  background: color-mix(in srgb, var(--social-accent), transparent 78%);
+  color: var(--social-accent);
+}
+
+.social-link__icon svg {
+  width: 1.65rem;
+  height: 1.65rem;
+  fill: currentColor;
+}
+
+.social-link--instagram .social-link__icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.social-link--instagram .social-link__icon-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-link__copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.2rem;
+}
+
+.social-link__copy strong {
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+.social-link__copy span {
+  overflow: hidden;
+  color: #b6b6bf;
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.social-link__arrow {
+  margin-left: auto;
+  color: #a4a4ad;
+  font-size: 1.15rem;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.social-link:hover .social-link__arrow {
+  transform: translate(2px, -2px);
+  color: var(--social-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link,
+  .social-link__arrow {
+    transition: none;
+  }
+}
